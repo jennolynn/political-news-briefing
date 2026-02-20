@@ -1,0 +1,16 @@
+sources:
+  - name: Reuters Politics
+    type: rss
+    url: https://feeds.reuters.com/Reuters/PoliticsNews
+
+  - name: AP Politics
+    type: rss
+    url: https://apnews.com/hub/politics
+
+  - name: NPR Politics
+    type: rss
+    url: https://www.npr.org/rss/rss.php?id=1014
+
+  - name: Politico
+    type: rss
+    url: https://www.politico.com/rss/politics08.xml
