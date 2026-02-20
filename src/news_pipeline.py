@@ -1,12 +1,16 @@
-import feedparser, yaml, datetime
+import feedparser, yaml, datetime, os
 from collections import defaultdict
+
+# Get the folder where the script lives
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_yaml(path):
     with open(path) as f:
         return yaml.safe_load(f)
 
-feeds = load_yaml("../feeds.yml")["sources"]
-categories = load_yaml("../categories.yml")["categories"]
+# Correct paths relative to script
+feeds = load_yaml(os.path.join(BASE_DIR, "feeds.yml"))["sources"]
+categories = load_yaml(os.path.join(BASE_DIR, "categories.yml"))["categories"]
 
 articles = []
 
@@ -45,5 +49,6 @@ output += (
     "Foreign policy and judicial decisions also continue to shape the national agenda."
 )
 
-with open("daily_briefing.md", "w") as f:
+# Save output to repo root (so Git can commit it)
+with open(os.path.join(BASE_DIR, "../daily_briefing.md"), "w") as f:
     f.write(output)
