@@ -5,8 +5,8 @@ def load_yaml(path):
     with open(path) as f:
         return yaml.safe_load(f)
 
-feeds = load_yaml("feeds.yml")["sources"]
-categories = load_yaml("categories.yml")["categories"]
+feeds = load_yaml("../feeds.yml")["sources"]
+categories = load_yaml("../categories.yml")["categories"]
 
 articles = []
 
