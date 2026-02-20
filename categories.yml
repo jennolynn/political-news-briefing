@@ -1,0 +1,21 @@
+categories:
+  Elections:
+    keywords: [election, primary, vote, ballot, turnout]
+
+  Congress:
+    keywords: [house, senate, bill, legislation, congress]
+
+  Courts:
+    keywords: [supreme court, ruling, judge, lawsuit]
+
+  Executive Branch:
+    keywords: [white house, president, biden, administration]
+
+  Foreign Policy:
+    keywords: [ukraine, china, russia, israel, nato]
+
+  Immigration:
+    keywords: [border, immigration, migrant, asylum]
+
+  Economy:
+    keywords: [inflation, economy, jobs, fed, interest rates]
