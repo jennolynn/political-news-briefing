@@ -1,0 +1,29 @@
+name: Daily Political News Briefing
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # runs daily at noon UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install feedparser pyyaml
+
+      - run: python src/news_pipeline.py
+
+      - name: Commit results
+        run: |
+          git config user.name "news-bot"
+          git config user.email "bot@github.com"
+          git add daily_briefing.md
+          git commit -m "Daily political briefing"
+          git push
